@@ -4,7 +4,7 @@
     --check-button-color: #1bc4cb;
     --button-hover: #00a6ac;
     --text-color: #161c20;
-    --task-completa-color: #a09c98;
+    --task-complet-color: #a09c98;
     --text-font: "Open Sans", sans-serif;
 }
 
@@ -103,6 +103,13 @@ li {
     border-radius: 50%;
     cursor: pointer;
     position: relative;
+}
+
+.paragraph__date {
+  font-size: 11px;
+  color: gray;
+  position: absolute;
+  margin-left: 29em;
 }
 
 .checkbox:checked {

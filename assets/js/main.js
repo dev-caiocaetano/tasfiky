@@ -28,9 +28,19 @@ function taskify() {
         deleteButton.appendChild(textDeleteButton); //Adiciona o texto criado para o botão dentro do botão deleteButton
         deleteButton.classList.add("delete__button") //Adiciona uma class=delete__button para estilizar no css
 
+        let additionDate = document.createElement("p"); //Cria um novo <p> para a data que a tarefa foi criada.
+        additionDate.classList.add("paragraph__date"); //Adiciona uma class=paragraph__date para estilizar no css.
+        const date = new Date() //Adiciona a função construtora Date em uma variável.
+        const day = date.getDate(); //Adiciona a uma variável o dia que a tarefa foi criada.
+        const month = date.getMonth() + 1; //Adiciona a uma variável o mês que a tarefa foi criada.
+        const year = date.getFullYear(); //Adiciona a uma variável o ano que a tarefa foi adicionada.
+        let textDate = document.createTextNode(`Criada em ${day}/${month}/${year}`) //Define o texto que exibirá a data
+        additionDate.appendChild(textDate); //Adiciona o texto criado ao paragrafo.
+        
         let taskTextNode = document.createTextNode(userTask); //Adiciona a uma variável o conteúdo da tarefa em texto.
         newLi.appendChild(checkbox); //Adiciona o checkbox ao campo da lista
         newLi.appendChild(taskTextNode); //Adiciona a tarefa ao campo da lista
+        newLi.appendChild(additionDate); //Adiciona a data de criação ao campo da lista
         newLi.appendChild(deleteButton); //Adiciona o botão de "Excluir" ao campo da lista
 
         taskList.appendChild(newLi); //Adiciona o <li> completo na lista de tarefas
